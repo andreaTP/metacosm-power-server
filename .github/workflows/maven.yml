@@ -38,7 +38,9 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -B package -Dquarkus.test.profile.tags='ci' --file pom.xml
+      run: |
+        echo ${HOME}
+        mvn -B package -Dquarkus.test.profile.tags='ci' --file pom.xml
 
   native-check:
     name: Perform native build check with default platform
